@@ -214,11 +214,11 @@ footer span{color:var(--pink)}
         <div class="contact-item"><div class="contact-icon">💼</div><div class="contact-detail"><div class="clabel">LinkedIn</div><div class="cvalue">linkedin.com/in/qualityintelligence</div></div></div>
         <div class="contact-item"><div class="contact-icon">🐙</div><div class="contact-detail"><div class="clabel">GitHub</div><div class="cvalue">github.com/agiletester365-spec</div></div></div>
       </div>
-      <form class="contact-form" onsubmit="event.preventDefault();alert('Message sent! (demo only)')">
-        <input type="text" placeholder="Your Name" required="">
-        <input type="email" placeholder="Your Email" required="">
-        <input type="text" placeholder="Subject">
-        <textarea placeholder="Your Message"></textarea>
+      <form class="contact-form" id="contact-form">
+        <input id="cf-name" type="text" placeholder="Your Name" required="">
+        <input id="cf-email" type="email" placeholder="Your Email" required="">
+        <input id="cf-subject" type="text" placeholder="Subject">
+        <textarea id="cf-message" placeholder="Your Message"></textarea>
         <button type="submit" class="btn-submit">Send Message</button>
       </form>
     </div>
@@ -250,6 +250,20 @@ footer span{color:var(--pink)}
   var links=document.querySelectorAll('.nav-links a');
   var sections=document.querySelectorAll('section[id]');
   window.addEventListener('scroll',function(){var cur='';sections.forEach(function(s){if(window.scrollY>=s.offsetTop-120)cur=s.id;});links.forEach(function(l){l.style.color=l.getAttribute('href').slice(1)===cur?'#e8185d':'#aaa';});});
+})();
+(function(){
+  var f=document.getElementById('contact-form');
+  if(!f)return;
+  var TO='bkumar.qa392@gmail.com';
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=(document.getElementById('cf-name').value||'').trim();
+    var from=(document.getElementById('cf-email').value||'').trim();
+    var subject=(document.getElementById('cf-subject').value||'').trim()||('Portfolio enquiry'+(name?' from '+name:''));
+    var msg=(document.getElementById('cf-message').value||'').trim();
+    var body=msg+'\n\n— '+name+(from?' <'+from+'>':'');
+    window.location.href='mailto:'+TO+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  });
 })();
 </script>
 </body></html>
