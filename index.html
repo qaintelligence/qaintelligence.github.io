@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bipin Patel — SDET & QA Automation Engineer</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--pink:#e8185d;--dark:#111;--dark2:#1a1a1a;--gray:#888;--white:#fff}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--white);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:70px;background:rgba(10,10,10,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-logo{font-size:1.25rem;font-weight:800;letter-spacing:2px;color:var(--white);text-decoration:none}
+.nav-logo span{color:var(--pink)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{color:#aaa;text-decoration:none;font-size:.78rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--pink)}
+#hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:#0a0a0a}
+#star-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero-content{position:relative;z-index:2;padding:0 20px}
+.hero-tag{font-size:.75rem;letter-spacing:4px;font-weight:600;color:var(--pink);margin-bottom:16px;text-transform:uppercase}
+.hero-name{font-size:clamp(2.8rem,8vw,6rem);font-weight:900;line-height:1.05;color:var(--white);margin-bottom:24px;letter-spacing:-1px}
+.hero-roles{font-size:.75rem;letter-spacing:3px;font-weight:600;color:#aaa;text-transform:uppercase;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;margin-bottom:44px}
+.hero-roles span{color:var(--pink)}
+.btn-hero{display:inline-flex;align-items:center;gap:8px;padding:14px 36px;border:1.5px solid var(--white);color:var(--white);text-decoration:none;font-size:.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;transition:background .25s,color .25s}
+.btn-hero:hover{background:var(--pink);border-color:var(--pink)}
+.hero-socials{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;gap:28px;z-index:2}
+.hero-socials a{color:#888;transition:color .2s;font-size:1.2rem;text-decoration:none}
+.hero-socials a:hover{color:var(--pink)}
+.hero-socials svg{width:22px;height:22px;fill:currentColor}
+section{padding:100px 0}
+.container{max-width:1100px;margin:0 auto;padding:0 40px}
+.section-label{font-size:.72rem;letter-spacing:4px;font-weight:700;color:var(--pink);text-transform:uppercase;text-align:center;margin-bottom:12px}
+.section-title{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;text-align:center;margin-bottom:60px;color:var(--white)}
+#about{background:var(--dark2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.about-photo-wrap{display:flex;justify-content:center}
+.about-avatar-placeholder{width:200px;height:200px;border-radius:50%;background:linear-gradient(135deg,#222,#333);border:3px solid var(--pink);display:flex;align-items:center;justify-content:center;font-size:4rem}
+.about-text p{color:#ccc;line-height:1.8;margin-bottom:20px;font-size:.97rem}
+.profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 32px;margin-top:32px}
+.profile-item{border-bottom:1px solid #2a2a2a;padding-bottom:10px}
+.profile-item .label{font-size:.68rem;letter-spacing:2px;font-weight:700;color:var(--pink);text-transform:uppercase;margin-bottom:4px}
+.profile-item .value{font-size:.88rem;color:#ddd}
+#skills{background:var(--dark)}
+.skills-intro{color:#aaa;text-align:center;max-width:600px;margin:0 auto 48px;line-height:1.8;font-size:.95rem}
+.skills-list{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+.skill-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.skill-name{font-size:.72rem;letter-spacing:2px;font-weight:700;text-transform:uppercase;color:#ccc}
+.skill-pct{font-size:.72rem;font-weight:700;background:var(--pink);color:#fff;padding:2px 7px;border-radius:2px}
+.skill-track{height:3px;background:#2a2a2a}
+.skill-fill{height:3px;background:var(--pink);width:0;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+#resume{background:var(--dark2)}
+.resume-cols{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.resume-col-title{font-size:1.1rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;margin-bottom:32px;padding-bottom:12px;border-bottom:1px solid #2a2a2a}
+.timeline{position:relative;padding-left:20px}
+.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:1px;background:#2a2a2a}
+.tl-item{position:relative;padding-left:28px;margin-bottom:36px}
+.tl-item::before{content:'';position:absolute;left:-24px;top:6px;width:8px;height:8px;border-radius:50%;background:var(--pink);border:2px solid var(--dark2)}
+.tl-date{font-size:.68rem;letter-spacing:2px;color:var(--pink);font-weight:700;text-transform:uppercase;margin-bottom:4px}
+.tl-role{font-size:1rem;font-weight:700;margin-bottom:2px}
+.tl-org{font-size:.82rem;color:var(--gray);margin-bottom:8px}
+.tl-desc{font-size:.85rem;color:#aaa;line-height:1.7}
+#stats{background:var(--dark);padding:80px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;text-align:center}
+.stat-num{font-size:clamp(2.5rem,5vw,4rem);font-weight:900;color:var(--pink);line-height:1}
+.stat-label{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:#777;margin-top:8px}
+#portfolio{background:var(--dark2)}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.portfolio-card{background:#1e1e1e;border:1px solid #2a2a2a;padding:32px 28px;transition:border-color .25s,transform .25s;cursor:default}
+.portfolio-card:hover{border-color:var(--pink);transform:translateY(-4px)}
+.card-tag{font-size:.65rem;letter-spacing:3px;color:var(--pink);font-weight:700;text-transform:uppercase;margin-bottom:12px}
+.card-title{font-size:1rem;font-weight:700;margin-bottom:10px}
+.card-desc{font-size:.85rem;color:#999;line-height:1.7}
+.card-icon{font-size:2rem;margin-bottom:16px}
+#contact{background:var(--dark)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.contact-info h3{font-size:1.1rem;font-weight:700;margin-bottom:24px}
+.contact-item{display:flex;gap:16px;margin-bottom:24px;align-items:flex-start}
+.contact-icon{width:44px;height:44px;border-radius:50%;background:#1e1e1e;border:1px solid #333;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.contact-detail .clabel{font-size:.7rem;letter-spacing:2px;color:var(--pink);text-transform:uppercase;font-weight:700;margin-bottom:2px}
+.contact-detail .cvalue{font-size:.88rem;color:#ccc}
+.contact-form{display:flex;flex-direction:column;gap:16px}
+.contact-form input,.contact-form textarea{background:#1a1a1a;border:1px solid #2a2a2a;color:var(--white);padding:14px 16px;font-family:inherit;font-size:.88rem;outline:none;resize:none;transition:border-color .2s}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--pink)}
+.contact-form textarea{height:140px}
+.btn-submit{padding:14px 36px;background:var(--pink);color:#fff;border:none;font-family:inherit;font-size:.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;cursor:pointer;align-self:flex-start;transition:opacity .2s}
+.btn-submit:hover{opacity:.85}
+footer{background:#0a0a0a;padding:32px 40px;text-align:center;font-size:.8rem;color:#555;border-top:1px solid #1a1a1a}
+footer span{color:var(--pink)}
+@media(max-width:768px){.nav-links{display:none}.about-grid,.resume-cols,.contact-grid{grid-template-columns:1fr}.portfolio-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}.profile-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="#hero">BP<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about" style="color: rgb(170, 170, 170);">About</a></li>
+    <li><a href="#skills" style="color: rgb(170, 170, 170);">Skills</a></li>
+    <li><a href="#resume" style="color: rgb(170, 170, 170);">Resume</a></li>
+    <li><a href="#portfolio" style="color: rgb(232, 24, 93);">Work</a></li>
+    <li><a href="#contact" style="color: rgb(170, 170, 170);">Contact</a></li>
+  </ul>
+</nav>
+<section id="hero">
+  <canvas id="star-canvas" width="682" height="1112"></canvas>
+  <div class="hero-content">
+    <p class="hero-tag">Hello, World.</p>
+    <h1 class="hero-name">I'm Bipin Patel.</h1>
+    <div class="hero-roles"><span>|</span>SDET / Test Automation Lead<span>|</span>AI-Assisted Testing<span>|</span>Cypress · Playwright · Selenium<span>|</span></div>
+    <a href="#about" class="btn-hero">More About Me ↓</a>
+  </div>
+  <div class="hero-socials">
+    <a href="https://linkedin.com/in/bipinpatelqa" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg></a>
+    <a href="https://github.com/agiletester365-spec" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg></a>
+    <a href="mailto:bkumar.qa392@gmail.com" title="Email"><svg viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-.9.732-1.636 1.636-1.636h.749L12 10.5l9.615-6.68h.749A1.636 1.636 0 0124 5.457z"></path></svg></a>
+  </div>
+</section>
+<section id="about">
+  <div class="container">
+    <p class="section-label">About</p>
+    <h2 class="section-title">Let me introduce myself.</h2>
+    <div class="about-grid">
+      <div class="about-photo-wrap"><div class="about-avatar-placeholder">👤</div></div>
+      <div class="about-text">
+        <p>I'm an SDET and test automation lead with 13 years across healthcare, enterprise, and government QA (DaVita, Hewlett Packard Enterprise, USDA). I architect Cypress/TypeScript and Selenium automation platforms and own quality end to end — from framework design through the CI/CD release gate.</p>
+        <p>I focus on AI-assisted quality engineering: pairing with Claude, ChatGPT, and Copilot to cut scaffolding time, using Applitools, Testim, and Mabl for self-healing visual coverage, and LangChain + AWS Bedrock to generate realistic synthetic test data. AWS Certified Developer.</p>
+        <div class="profile-grid">
+          <div class="profile-item"><div class="label">Full Name</div><div class="value">Bipin Patel</div></div>
+          <div class="profile-item"><div class="label">Role</div><div class="value">SDET / Test Automation Lead</div></div>
+          <div class="profile-item"><div class="label">Email</div><div class="value">bkumar.qa392@gmail.com</div></div>
+          <div class="profile-item"><div class="label">Location</div><div class="value">United States</div></div>
+          <div class="profile-item"><div class="label">GitHub</div><div class="value">github.com/agiletester365-spec</div></div>
+          <div class="profile-item"><div class="label">LinkedIn</div><div class="value">linkedin.com/in/bipinpatelqa</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="skills">
+  <div class="container">
+    <p class="section-label">Skills</p>
+    <h2 class="section-title">What I bring to the table.</h2>
+    <p class="skills-intro">My expertise centers on building reliable, maintainable test automation — from framework architecture and API coverage to CI/CD integration — increasingly augmented with AI-assisted quality engineering.</p>
+    <div class="skills-list" id="skills-list">
+      <div class="skill-item" data-pct="95"><div class="skill-header"><span class="skill-name">Test Automation (Cypress, Playwright, Selenium)</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill" style="width: 95%;"></div></div></div>
+      <div class="skill-item" data-pct="90"><div class="skill-header"><span class="skill-name">AI-Assisted Testing (Claude, Copilot, Applitools, Testim/Mabl)</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" style="width: 90%;"></div></div></div>
+      <div class="skill-item" data-pct="85"><div class="skill-header"><span class="skill-name">API Testing (RestAssured, ReadyAPI/SoapUI)</span><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill" style="width: 85%;"></div></div></div>
+      <div class="skill-item" data-pct="88"><div class="skill-header"><span class="skill-name">Languages (Java, TypeScript, JavaScript, Python)</span><span class="skill-pct">88%</span></div><div class="skill-track"><div class="skill-fill" style="width: 88%;"></div></div></div>
+      <div class="skill-item" data-pct="85"><div class="skill-header"><span class="skill-name">CI/CD &amp; DevOps (GitHub Actions, Maven, Docker)</span><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill" style="width: 85%;"></div></div></div>
+      <div class="skill-item" data-pct="82"><div class="skill-header"><span class="skill-name">AWS &amp; Cloud (Lambda, Bedrock, S3, DynamoDB)</span><span class="skill-pct">82%</span></div><div class="skill-track"><div class="skill-fill" style="width: 82%;"></div></div></div>
+    </div>
+  </div>
+</section>
+<section id="resume">
+  <div class="container">
+    <p class="section-label">Resume</p>
+    <h2 class="section-title">Experience &amp; Education</h2>
+    <div class="resume-cols">
+      <div>
+        <div class="resume-col-title">Work Experience</div>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-date">Aug 2018 – Present</div><div class="tl-role">Test Automation Lead / SDET</div><div class="tl-org">DaVita Kidney Care</div><div class="tl-desc">Built and operate the Cypress/TypeScript automation platform powering web regression across the patient-care portal. Cut test-scaffolding time ~40% by pairing with Claude, ChatGPT, and Copilot, and reduced flaky-test maintenance ~30% via Applitools Eyes, Testim, and Mabl. Replaced brittle seed scripts with a LangChain + AWS Bedrock synthetic-data generator and tuned GitHub Actions pipelines for faster feedback.</div></div>
+          <div class="tl-item"><div class="tl-date">Jun 2016 – Aug 2018</div><div class="tl-role">Senior Test Engineer</div><div class="tl-org">Hewlett Packard Enterprise</div><div class="tl-desc">Owned automated testing for a payments processing system and internal QC tooling. Established team-wide Java automation standards, standardized the Selenium framework, introduced BDD with Cucumber, and drove cross-browser coverage across TestComplete and Selenium.</div></div>
+          <div class="tl-item"><div class="tl-date">Jun 2013 – Jun 2016</div><div class="tl-role">Automation Engineer</div><div class="tl-org">US Department of Agriculture</div><div class="tl-desc">Authored VBScript automation for weekly PEGA app builds with UI and Oracle data verification. Trained peers on Quick Test Professional (QTP), built UNIX shell scripts for test-data extraction, and closed each release with metrics and stakeholder notes.</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="resume-col-title">Education &amp; Certifications</div>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-role">B.Sc. Chemical Engineering</div><div class="tl-org">Virginia Commonwealth University</div></div>
+          <div class="tl-item"><div class="tl-date">Certification</div><div class="tl-role">AWS Certified Developer – Associate</div><div class="tl-org">Amazon Web Services</div></div>
+          <div class="tl-item"><div class="tl-date">Certification</div><div class="tl-role">Machine Learning Certificate</div><div class="tl-org">Stanford Online</div></div>
+          <div class="tl-item"><div class="tl-date">Certification</div><div class="tl-role">CompTIA Security+ (SY0-601)</div><div class="tl-org">CompTIA</div></div>
+          <div class="tl-item"><div class="tl-date">Certification</div><div class="tl-role">SAFe 4</div><div class="tl-org">Scaled Agile</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div><div class="stat-num" data-target="13">13</div><div class="stat-label">Years in QA</div></div>
+      <div><div class="stat-num" data-target="40" data-suffix="%">40%</div><div class="stat-label">Faster Test Scaffolding (AI)</div></div>
+      <div><div class="stat-num" data-target="30" data-suffix="%">30%</div><div class="stat-label">Less Flaky-Test Maintenance</div></div>
+    </div>
+  </div>
+</section>
+<section id="portfolio">
+  <div class="container">
+    <p class="section-label">Portfolio</p>
+    <h2 class="section-title">Selected Works</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-card"><div class="card-icon">🚀</div><div class="card-tag">SaaS Platform</div><div class="card-title">Analytics Dashboard</div><div class="card-desc">Real-time data visualisation platform handling 50M+ events/day. Built with React, D3.js, and ClickHouse.</div></div>
+      <div class="portfolio-card"><div class="card-icon">🛒</div><div class="card-tag">E-Commerce</div><div class="card-title">Headless Storefront</div><div class="card-desc">Blazing-fast e-commerce front-end with Next.js + Shopify Storefront API. 98 Lighthouse score.</div></div>
+      <div class="portfolio-card"><div class="card-icon">🤖</div><div class="card-tag">AI / ML</div><div class="card-title">Smart Doc Parser</div><div class="card-desc">LLM-powered document extraction pipeline using LangChain and GPT-4. Reduces manual data entry by 90%.</div></div>
+      <div class="portfolio-card"><div class="card-icon">📱</div><div class="card-tag">Mobile App</div><div class="card-title">Fitness Tracker</div><div class="card-desc">Cross-platform React Native app with workout logging, AI coaching, and Strava integration. 10K+ downloads.</div></div>
+      <div class="portfolio-card"><div class="card-icon">🔐</div><div class="card-tag">Security</div><div class="card-title">Auth SDK</div><div class="card-desc">Open-source multi-tenant authentication library with MFA, SSO, and WebAuthn. 500+ GitHub stars.</div></div>
+      <div class="portfolio-card"><div class="card-icon">⚡</div><div class="card-tag">Dev Tools</div><div class="card-title">CI/CD Toolkit</div><div class="card-desc">GitHub Actions toolkit for automated testing, semantic versioning, and zero-downtime deployments.</div></div>
+    </div>
+  </div>
+</section>
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">Let's work together.</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Feel free to reach out.</h3>
+        <div class="contact-item"><div class="contact-icon">📍</div><div class="contact-detail"><div class="clabel">Location</div><div class="cvalue">United States</div></div></div>
+        <div class="contact-item"><div class="contact-icon">✉</div><div class="contact-detail"><div class="clabel">Email</div><div class="cvalue">bkumar.qa392@gmail.com</div></div></div>
+        <div class="contact-item"><div class="contact-icon">💼</div><div class="contact-detail"><div class="clabel">LinkedIn</div><div class="cvalue">linkedin.com/in/bipinpatelqa</div></div></div>
+        <div class="contact-item"><div class="contact-icon">🐙</div><div class="contact-detail"><div class="clabel">GitHub</div><div class="cvalue">github.com/agiletester365-spec</div></div></div>
+      </div>
+      <form class="contact-form" onsubmit="event.preventDefault();alert('Message sent! (demo only)')">
+        <input type="text" placeholder="Your Name" required="">
+        <input type="email" placeholder="Your Email" required="">
+        <input type="text" placeholder="Subject">
+        <textarea placeholder="Your Message"></textarea>
+        <button type="submit" class="btn-submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+<footer><p>© 2026 <span>Bipin Patel</span>. SDET / Test Automation Lead.</p></footer>
+<script>
+(function(){
+  var c=document.getElementById('star-canvas');
+  var ctx=c.getContext('2d');
+  var stars=[];
+  function resize(){c.width=window.innerWidth;c.height=window.innerHeight;}
+  function makeStars(n){stars=[];for(var i=0;i<n;i++)stars.push({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*1.2+0.2,a:Math.random(),speed:Math.random()*0.003+0.001});}
+  function draw(){ctx.clearRect(0,0,c.width,c.height);ctx.fillStyle='#0a0a0a';ctx.fillRect(0,0,c.width,c.height);stars.forEach(function(s){s.a+=s.speed;var alpha=(Math.sin(s.a)+1)/2*0.8+0.1;ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,'+alpha+')';ctx.fill();});requestAnimationFrame(draw);}
+  resize();makeStars(220);draw();
+  window.addEventListener('resize',function(){resize();makeStars(220);});
+})();
+(function(){
+  var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){document.querySelectorAll('.skill-item').forEach(function(item){item.querySelector('.skill-fill').style.width=item.getAttribute('data-pct')+'%';});obs.disconnect();}});},{threshold:0.3});
+  var el=document.getElementById('skills-list');
+  if(el)obs.observe(el);
+})();
+(function(){
+  function animateCounter(el,target,dur){var start=null;function step(ts){if(!start)start=ts;var p=Math.min((ts-start)/dur,1);el.textContent=Math.floor(p*target)+(p>=1?(el.dataset.suffix||''):'');if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
+  var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){document.querySelectorAll('.stat-num[data-target]').forEach(function(el){animateCounter(el,parseInt(el.dataset.target),1500);});obs.disconnect();}});},{threshold:0.4});
+  var s=document.getElementById('stats');if(s)obs.observe(s);
+})();
+(function(){
+  var links=document.querySelectorAll('.nav-links a');
+  var sections=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){var cur='';sections.forEach(function(s){if(window.scrollY>=s.offsetTop-120)cur=s.id;});links.forEach(function(l){l.style.color=l.getAttribute('href').slice(1)===cur?'#e8185d':'#aaa';});});
+})();
+</script>
+</body></html>
